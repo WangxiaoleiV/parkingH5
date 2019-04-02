@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>车位生活</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+            .swiper-container img{
+                width: 100%;
+            }
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+                overflow: hidden;
+			}
+			.fenlei{
+				background-color: #ffffff;
+				/* height: 7.5625rem; */
+			}
+			.fenlei ul{
+				display: -webkit-flex;
+                display: flex;
+				flex-direction: row;
+			    align-items: center;
+			    justify-content:space-around;
+                padding-bottom: 1rem;
+			}
+			.fenlei ul li{
+				margin-top: 1rem;
+				text-align: center;
+			}
+			.fenlei li img{
+				width: 2.4rem;
+			}
+			.fenlei li p{
+				font-size: .84rem;
+				color: #7b7b7d;
+                text-align: center;
+			}
+			.nearpark{
+                width: 100%;
+                background-color: #ffffff;
+                margin-top: 1rem;
+                overflow: hidden;
+			}
+			.nearhead{
+               width: 100%;
+			   height: 1.5rem;
+               margin-top: .6rem;
+			   /* background-color: #f1f1f1; */
+			   overflow: hidden;
+               font-size: .94rem;
+			}
+			.zhu{
+				float: left;
+				margin-left: 1rem;
+				width: .1875rem;
+				height: .75rem;
+				border-radius: 50%;
+				background-color: #d80d25;
+				margin-top: .375rem;
+			}
+			.nearhead p{
+                float: left;
+				margin-left: .5rem;
+				font-size:  .875rem;
+				margin-top: .125rem;
+				color: #333333;
+			}
+			.nearhead span{
+              float: right;
+			  margin-top: .375rem;
+			  margin-right: .5rem;
+			  font-size: .6875rem;
+			  color: #959595;
+			}
+          .position{
+              position: relative;
+              overflow: hidden;
+              height: 9rem;
+          }
+          .position img{
+              position: absolute;
+          }
+          .position .img1{ 
+              height: 5.01rem;
+          }
+         .position .img2{
+              width: 2.2rem;
+          }
+         .position p{
+            margin-top: 5.5rem;
+            font-size: 0.81rem;
+            color: #333333;
+            text-align: center;
+            height: 2.3rem;
+            overflow: hidden;
+         }
+		 .carfuli{
+             background-color: #ffffff;
+             overflow: hidden;
+             margin-top: .63rem;
+         }	
+         .list ul{
+             display: -webkit-flex;
+             display: flex;
+             flex-direction: row;
+			    align-items: center;
+			    justify-content:space-around;
+                padding-bottom: 1rem;
+         }
+         .list ul li{
+             margin-top: 0.5rem;
+         }
+         .active{
+             background-color: #ffffff;
+             overflow: hidden;
+             margin-top: .63rem;
+             margin-bottom: 1rem;
+         }
+        .active #trim{
+            width: 21.7rem;
+        }
+        #trim ul{
+            overflow: hidden;
+        }
+        #trim li{
+            margin: 1rem 0;
+        }
+        .center{
+            overflow: hidden;
+        }
+         .centerone img{
+             width: 10.06rem;
+         }
+
+			.center img{
+                float: left;
+				width: 7.625rem;
+				border-radius: 12%;
+			}
+			.center .nearright{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.nearright p:nth-of-type(1){
+				color: #333333;
+				font-size: .9375rem;
+				line-height: 1.125rem;
+			}
+			.nearright p:nth-of-type(2){
+				font-size: .75rem;
+				color: #7b7b7b;
+				margin-top: 1rem;
+			}
+            .nearright p:nth-of-type(2) span{
+                position: relative;
+            }
+            .nearright p:nth-of-type(2) span img{
+				width: 1.19rem;
+				position: absolute;
+				
+			}
+            .head2{
+              left: .99rem;
+            }
+            .head3{
+              left: 1.69rem;
+            }
+            .nearright p:nth-of-type(2) span:nth-of-type(2){
+                margin-left: 4rem;
+                font-size: 0.75rem;
+                color: #333333;
+            }
+			.nearright p:nth-of-type(3){
+				font-size: .75rem;
+                width: 8.2rem;
+				height: 1.5rem;
+				color: #fefefe;
+				text-align: center;
+				line-height: 1.5rem;   
+				margin-top: 0.5rem;
+                background-image: linear-gradient(263deg, 
+                #fb6e7f 0%, 
+                #e93d52 47%, 
+                #d70c24 100%), 
+            linear-gradient(90deg, 
+                #24afff 0%, 
+                #ff3ff8 100%);
+                border-radius: .5rem;
+			}
+            .showpic{
+				padding-left: 1.3rem;
+				margin-top: .5rem;
+			}
+		</style>
+	</head>
+	<body> 
+		<div id="wrap">
+		<!--轮播图-->
+			<div class="swiper-container" id="swiper1">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide"><a href="#"><img src="img/ceshi.jpg"/></a></div>
+			  </div>
+			  <div class="swiper-pagination"></div>
+			</div>
+		<!--分类-->	
+			<div class="fenlei">
+				<ul>
+					<li>
+						<img src="img/parklife/xcyc.jpg"/>
+						<p>修车养车</p>
+					</li>
+					<li>
+						<img src="img/parklife/xiche.png"/>
+						<p>特惠洗车</p>
+					</li>
+					<li>
+						<img src="img/parklife/qqw.png"/>
+						<p>车位分期</p>
+					</li>
+					<li>
+						<img src="img/parklife/heop.png"/>
+						<p>惠生活</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+						<img src="img/parklife/am.png"/>
+						<p>违章查询</p>
+					</li>
+					<li>
+						<img src="img/parklife/mn.png"/>
+						<p>社区服务</p>
+					</li>
+					<li>
+						<img src="img/parklife/eghr.png"/>
+						<p>车险优惠</p>
+					</li>
+					<li>
+						<img src="img/parklife/si.png"/>
+						<p>自驾游</p>
+					</li>
+				</ul>
+			</div>
+		<!--热门推荐-->	
+		   <div class="nearpark">
+		   	<div class="nearhead">
+		   		<div class="zhu"></div>
+		   		<p>热门推荐：</p>  	  
+		   	</div>
+		   	<div class="showpic">
+               <!-- 图文展示 -->
+               <!-- Swiper -->
+            <div class="swiper-container" id="swiper2">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="position">
+                      <img class="img1" src="img/parklife/taifeng.png" alt="">
+                      <img class="img2" src="img/parklife/VIP.png" alt="">
+                      <p>台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆台风“摩羯”登陆</p>
+                    </div>    
+                </div>
+                <div class="swiper-slide">
+                        <div class="position">
+                                <img class="img1" src="img/parklife/meizi.png" alt="">
+                                <img class="img2" src="img/parklife/VIP.png" alt="">
+                                <p>七夕想上班</p>
+                              </div> 
+                </div>
+                <div class="swiper-slide">
+                        <div class="position">
+                                <img class="img1" src="img/parklife/taifeng.png" alt="">
+                                <img class="img2" src="img/parklife/VIP.png" alt="">
+                                <p>台风“摩羯”登陆</p>
+                              </div> 
+                </div>
+                <div class="swiper-slide">
+                        <div class="position">
+                                <img class="img1" src="img/parklife/taifeng.png" alt="">
+                                <img class="img2" src="img/parklife/VIP.png" alt="">
+                                <p>台风“摩羯”登陆</p>
+                              </div> 
+                </div>
+                <div class="swiper-slide">
+                        <div class="position">
+                                <img class="img1" src="img/parklife/taifeng.png" alt="">
+                                <img class="img2" src="img/parklife/VIP.png" alt="">
+                                <p>台风“摩羯”登陆</p>
+                              </div> 
+                </div>
+                <div class="swiper-slide">
+                        <div class="position">
+                                <img class="img1" src="img/parklife/taifeng.png" alt="">
+                                <img class="img2" src="img/parklife/VIP.png" alt="">
+                                <p>台风“摩羯”登陆</p>
+                              </div> 
+                </div>
+                </div>
+            </div>
+
+
+               </div>   
+		   </div>
+		   <!--本月车友福利-->
+		    <div class="carfuli">
+		   	<div class="nearhead">
+		   		<div class="zhu"></div>
+		   		<p>本月车友福利：</p>  
+		   	</div>
+		   	<div class="list">
+		   		<ul> 
+		   			<li>
+					<a href="#">  
+						<div class="centerone">
+		   				<img src="img/parklife/dongtian.png"/>
+						</div>
+					</a>
+					</li>
+					<li>
+                        <a href="#">  
+                            <div class="centerone">
+                               <img src="img/parklife/huanle.png"/>
+                            </div>
+                        </a>
+                    </li>   
+		   		</ul>
+		   	</div>
+           </div>
+           <!-- 社区活动 -->
+           <div class="active">
+            <div class="nearhead">
+                <div class="zhu"></div>
+                <p>本月社区活动：</p>  
+            </div>
+            <div id="trim" style="margin: auto">
+              <ul>
+                  <li>
+                    <a href="#">
+                    <div class="center">	  
+                        <img src="img/parklife/tongqing.png"/>
+                        <div class="nearright">
+                        <p>小区南广场举行庆祝二中全会文艺演出活动</p>
+                        <p><span><img src="img/parklife/head1.png" alt=""><img class="head2" src="img/parklife/head2.png" alt=""><img class="head3" src="img/parklife/head3.png" alt=""></span>&nbsp;<span>23</span>人参加</p>
+                        <p><span>活动回顾</span>|<span>7.26-7.27</span></p>
+                        </div>
+                     </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <div class="center">	  
+                        <img src="img/parklife/tongqing.png"/>
+                        <div class="nearright">
+                        <p>小区南广场举行庆祝二中全会文艺演出活动</p>
+                        <p><span><img src="img/parklife/head1.png" alt=""><img class="head2" src="img/parklife/head2.png" alt=""><img class="head3" src="img/parklife/head3.png" alt=""></span>&nbsp;<span>23</span>人参加</p>
+                        <p><span>活动回顾</span>|<span>7.26-7.27</span></p>
+                        </div>
+                     </div>
+                    </a>
+                  </li>
+              </ul>
+            </div>
+           </div>
+		<!--<label>照相机</label>
+	    <input type="file" id='image' accept="image/*" capture='camera'>
+	    <br>
+	    <label>摄像机</label>
+	    <input type="file" id='video' accept="video/*" capture='camcorder'>
+		</div>	
+		<label>点击下边</label>
+		<input accept="image/*" type="file">-->
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var swiper1 = new Swiper('#swiper1', {
+		autoplay: true,//可选选项，自动滑动
+		loop:true,
+		pagination: {
+			    el: '.swiper-pagination',
+			  },
+	})
+    var swiper2 = new Swiper('#swiper2', {
+      slidesPerView: 2.5,
+      spaceBetween: 20,
+      freeMode: true,
+    });
+	</script>
+</html>

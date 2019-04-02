@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>车位分期</title>
+         <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+         <link rel="stylesheet" href="css/common.css">
+        <script type="text/javascript" src="js/alertPopShow.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+			}
+	       .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   font-size: 1.125rem;
+		   }
+          #picture img{
+              width: 100%;
+          }
+          #content{
+              overflow: hidden;
+              background: #ffffff;
+              margin-top: 1rem;
+          }
+          .nearhead{
+               width: 100%;
+			   height: 3rem;
+			   overflow: hidden;
+               line-height: 3rem;
+			}
+			.zhu{
+				float: left;
+				margin-left: .5rem;
+				width: .1875rem;
+				height: 1rem;
+				border-radius: 50%;
+				background-color: #d80d25;
+				margin-top: 1.1rem;
+			}
+			.nearhead p{
+                float: left;
+				margin-left: .375rem;
+				font-size:  1rem;
+				margin-top: .125rem;
+				color: #333333;
+			}
+			.nearhead span{
+              float: right;
+			  margin-top: .375rem;
+			  margin-right: .5rem;
+			  font-size: .6875rem;
+			  color: #959595;
+			}
+            .message{
+                width: 22rem;
+                margin: auto;
+                padding: 1rem 0;
+                border-top: 1px solid #f1f1f1; 
+                text-align: center;
+            }
+            .message input,.message select{
+               width: 11rem;
+               text-align: center;
+               
+            }
+            .center{
+            	margin: 1rem 0;
+            }
+            #edu{
+            	padding-left: 2.5rem;
+            }
+
+           .fabu{
+               width: 100%;
+               height: 8rem;
+               background-color: #ffffff;
+               margin-top: .8rem;
+               overflow: hidden;
+           }
+           .fabu p input{
+            width: 20.44rem;
+            height: 2.75rem;
+            background-color:  #d70c24;
+            border-radius: 0.31rem;
+            text-align: center;
+            line-height: 2.75rem;
+            margin: auto;
+            margin-top: 1rem;
+            color: #ffffff;
+            display: block;
+           }
+           #red{
+           	color: #dc0724;
+           }
+           .fabu p:nth-of-type(2){
+           	color: #999999;
+           	font-size: .75rem;
+           	width: 18.56rem;
+           	margin: 1rem auto;
+           }
+       
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+            <form action="" enctype="multipart/form-data"  method="post">
+            <!-- 顶部 -->
+            <div class="top">
+             <img src="img/back.png" alt="">
+             <p>车位分期</p>
+            </div>
+			<!-- 基本信息 -->
+			<div id="picture">
+             <img src="img/fenqi.jpg" alt="">
+			</div>
+			<!-- 联系人 -->
+		   <div id="content">
+                <div class="nearhead">
+                        <div class="zhu"></div>
+                        <p>在线申请：</p> 
+                    </div>
+                 <div class="message">
+                 	<div class="center">
+                 	<label for="user">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                   <input type="text" name="owner" id="user">
+                 	</div>
+                 <div class="center">
+                 	<label for="edu">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历：</label>
+                   <select name="" id="edu">
+                        <option value="1">研究生</option>
+                        <option value="2">本科</option>
+                        <option value="3">高中及以下</option>
+                    </select>
+                 </div>
+                   <div class="center">
+                   	<label for="phone">联系电话：</label>
+                   <input type="number" name="cellphone" id="phone">
+                   </div>
+                   <div class="center">
+                   	<label for="area">所在区域：</label>
+                   <input type="text" name="site" id="area">
+                   </div>
+                   
+                 </div>   
+           </div>
+           <div class="fabu">
+                <p><input type="button" value='提交申请' onclick="return check(this.form)"></p>
+                <p><span id="red">温馨提醒：</span>您提交的申请后，我们将在24小时内对您进行电话回访，请注意接受我们的来电，谢谢！</p>
+           </div>
+        </form>  
+        </div>
+        <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	</body>
+    <script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+
+         //验证不能为空等 
+          function check(form) {
+                 if(form.owner.value==''){
+                webToast("请输入姓名","middle",2000);
+                    // form.owner.focus();
+                    return false;
+                 }
+                    
+                 if(form.cellphone.value==''){
+                webToast("请输入您的手机号","middle",2000);
+                    // form.cellphone.focus();
+                    return false;
+                 }
+                 　    var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;      
+                 　　         if (!myreg.test(form.cellphone.value)) {
+                    webToast("手机号输入有误请重试","middle",2000);    
+                    // form.cellphone.focus();
+                    return false;
+                 }
+                 if(form.site.value==''){
+                webToast("请输入所在区域","middle",2000);
+                    // form.owner.focus();
+                    return false;
+                 }
+            webToast("提交申请成功！提交申请成功！提交申请成功！","middle",2000);
+            window.setTimeout(function(){
+				form.submit();
+				},2000);         
+         }               
+
+    </script>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>在租车位-查看更多</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+                color: #333333;
+			}
+            a{
+                text-decoration: none;
+                color: #333333;
+            }
+            .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   font-size: 1.125rem;
+               color: #333333;
+		   }
+           .top p:nth-of-type(2){
+               float: right;
+               margin-top: -3rem;
+               font-size: .75rem;
+               margin-right: .56rem;
+           }
+           .top a{
+               text-decoration: none;
+               color: #333333;
+           }
+           .header{
+               width: 100%;
+               height: 3rem;
+               background-color: #ffffff;
+               overflow: hidden;
+           }
+           .zhu{
+				float: left;
+				margin-left: .5rem;
+				width: .1875rem;
+				height: .75rem;
+				border-radius: 50%;
+				background-color: #d80d25;
+				margin-top: 1.3rem;
+			}
+            .header p{
+                float: left;
+                margin-left: 1.4rem;
+                font-size: 1rem;
+                color: #333333;
+                margin-top: 1rem;
+            }
+            .header p:nth-of-type(1){
+                margin-left: .66rem;
+            }
+            .search{
+                width: 100%;
+                margin: .63rem 0;
+                background: #ffffff;
+                overflow: hidden;
+            }
+            .search>p{
+               font-size: 1.06rem;
+               color: #333333;
+               margin-left: .88rem;
+               margin-top: .94rem;
+            }
+            .searchitem{
+                width: 21.22rem;
+                margin: auto;
+                margin-top: .5rem;
+            }
+            .searchitem li{
+                overflow: hidden;
+            }
+            .searchitem li>p{
+                font-size: 1rem;
+                display: inline-block;
+                vertical-align: top;
+                height: 2rem;
+                line-height: 2rem;  
+            }
+            .searchitem span{
+                font-size: .94rem;
+                height: 2rem;
+                line-height: 2rem; 
+                margin-left: .8rem;        
+            }
+            .chose span:nth-of-type(1){
+                margin-left: 0;
+            }
+            .active{
+                color: #d70c24 !important;
+            }
+             .chose{
+             display: inline-block;
+             width: 17rem;
+             margin-left: 1.16rem;
+             }
+            li .lastchose{
+              margin-top: -.2rem; 
+             }
+
+
+
+			.list{
+				width: 100%;
+				background-color: #ffffff;
+			}
+			.list ul{
+				width: 100%;	
+			}
+			.list ul li{
+				border-bottom: .0625rem solid #ebebeb;
+				overflow: hidden;
+			}
+			.list ul li .center{
+				width: 21.6875rem;
+				margin: auto;
+				margin-top: 1.0625rem;
+				overflow: hidden;
+				height: 7.5625rem;	
+			}
+			.center img{
+                float: left;
+				width: 7.625rem;
+			}
+			.center .nearright{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.nearright p:nth-of-type(1){
+				color: #333333;
+				font-size: .9375rem;
+				line-height: 1.125rem;
+			}
+			.nearright p:nth-of-type(2){
+				font-size: .75rem;
+				color: #7b7b7b;
+				margin-top: .25rem;
+			}
+			.nearright p:nth-of-type(3){
+				font-size: .75rem;
+                width: 1.75rem;
+				height: .75rem;
+				color: #dfa787;
+				border: .0625rem solid #dfa787;
+				text-align: center;
+				line-height: .8125rem;   
+				padding: .125rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4){
+				color: #d80d25;
+				font-size: .6875rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4) span{
+				font-size: .9375rem;
+			}
+            .add{
+                position: fixed;
+                top: 28rem;
+                right: 3rem;
+                width: 4.5rem;
+            }
+            #loadmore{
+            	width: 21.6875rem;
+            	margin: 1rem auto;
+            	background: #FFFFFF;
+            	text-align: center;
+            	color: #666666;
+            }
+            #loadmore a{
+            	color: #666666;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+           <a href=""><img class="add" src="img/add.png" alt=""></a> 
+            <!-- 头部 -->
+                <div class="top">
+                        <img src="img/back.png" alt="">
+                        <p>在租车位-查看更多</p>
+                        <p><a href="#">登录</a> &nbsp;|&nbsp; <a href="#">注册</a></p>
+                </div>
+                <!-- 顶层城市 -->
+                <div class="header">
+                  <div class="zhu"></div>
+                  <p>城市</p>
+                  <p>当前定位：</p>
+                  <!-- 切换待定 -->
+                  <p>郑州市</p>
+                  <!-- <p>点击切换~</p>   -->
+                </div>
+                <!-- 搜索条件 -->
+            <div class="search">
+                <p>按条件搜索：</p>
+                <div class="searchitem">
+                  <ul>
+                      <!-- 位置 -->
+                      <li>
+                      <p>位置</p>
+                      <div class="chose firstchose">
+                          <span class="active">不限</span>
+                          <span>金水区</span>
+                          <span>二七区</span>
+                          <span>惠济区</span>
+                          <span>管城回族区</span>
+                          <span>中原区</span>
+                          <span>高新区</span>
+                          <span>郑东新区</span>
+                          <span>新郑</span>
+                          <span>经开区</span>
+                          <span>其他地区</span>
+                      </div>
+                      </li>
+                      <!-- 价格 -->
+                      <li>
+                            <p>价格</p>
+                            <div class="chose middlechose">
+                                <span class="active">不限</span>
+                                <span>0-500元/月</span>
+                                <span>500-1000元/月</span>
+                                <span>1000元+</span>
+                            </div>
+                      </li>
+                      <!-- 面积 -->
+                      <li>
+                            <p>面积</p>
+                            <div class="chose lastchose">
+                                <span class="active">不限</span>
+                                <span>13m<sup>2</sup>以下</span>
+                                <span>13-16m<sup>2</sup></span>
+                                <span>16m<sup>2</sup>以上</span>
+                            </div>
+                      </li>
+                  </ul>
+                </div>
+            </div>
+
+		   <!--列表-->
+		    <div class="salepark">
+		   	<div class="list">
+		   		<ul> 
+		   			<li>
+					<a href="#">  
+							<div class="center">
+		   				<img src="img/small.png"/>
+		   				<div class="nearright">
+		   				<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+		   				<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+		   				<p>在租</p>
+		   				<p>￥<span>500元</span></p>
+						   </div>
+						</div>
+					</a>
+					   </li>
+					   <li>
+						<a href="#">
+						<div class="center">
+					   <img src="img/small.png"/>
+					   <div class="nearright">
+					   <p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+					   <p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+					   <p>在租</p>
+					   <p>￥<span>500元</span></p>
+					   </div>
+					</div>
+					</a>
+				   </li>
+		   		</ul>
+		   	</div>
+		   </div>
+		 </div>	
+		<div id="loadmore">
+			<p><a href="">^^点击加载更多^^</a></p>
+		</div>	
+		</div>  
+	</body>
+	
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+        $(".firstchose span").click(function (param) {
+             $(".firstchose span").removeClass("active");
+             $(this).addClass("active");  
+            //  $(".tex1").val($(this).text());
+           })
+           $(".middlechose span").click(function (param) {
+             $(".middlechose span").removeClass("active");
+             $(this).addClass("active");  
+            //  $(".tex1").val($(this).text());
+           })
+           $(".lastchose span").click(function (param) {
+             $(".lastchose span").removeClass("active");
+             $(this).addClass("active");  
+            //  $(".tex1").val($(this).text());
+           })
+	</script>
+</html>

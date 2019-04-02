@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>求租车位</title>
+         <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+         <link rel="stylesheet" href="css/common.css">
+        <script type="text/javascript" src="js/alertPopShow.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+			}
+	       .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   font-size: 1.125rem;
+		   }
+		   .topup{
+               width: 100%;
+               overflow: hidden;
+               height: 10.31rem;
+               background-image: linear-gradient(-12deg, 
+		#ffffff 0%, 
+		#e1c0c4 66%, 
+		#c38088 100%);
+           }
+           .topup img{
+               width: 5.16rem;
+               height: 5.16rem;
+               border-radius: 50%;
+               margin: auto;
+               margin-top: 2.06rem;
+               display: block;
+           }
+           .topup .letre{
+               position: relative;
+           }
+           .topup input{
+               position: absolute;
+               width: 5.16rem;
+               height: 5.16rem;
+               opacity: 0;
+               left: 0;
+               right: 0;
+               top: 0;bottom: 0;
+               margin: auto;
+           }
+           .letre p{
+               text-align: center;
+               font-size: 0.94rem;
+               color: #333333;
+               margin-top: .6rem;
+           }
+           #message{
+               background-color: #ffffff;
+               text-align: center;
+               color: #333333;
+               overflow: hidden;
+           }
+           #message>p{
+              font-size: 1.06rem;
+              margin: .5rem;
+           }
+           .centercontent{
+               width: 21.88rem;
+               margin: auto;
+               border-bottom: 1px solid #f1f1f1;
+               border-top: 1px solid #f1f1f1;
+               padding: .5rem 0;
+               overflow: hidden;
+           }
+           #distpicker select{
+               width: 5.6rem;
+               /* color: #999999; */
+           }
+           .areaname{
+               width: 8rem;
+               text-align: center;
+               font-size: 1.06rem;
+               border: none;
+           }
+           .carlist{
+               overflow: hidden;
+               border-bottom: 1px solid #f1f1f1;
+               padding: .5rem 0;
+           }
+           .carlist ul{
+               display: flex;
+               flex-direction: row;
+			    align-items: center;
+			    justify-content:space-around;
+			    margin-top: .5rem;
+           }
+           .carlist ul li{
+               width: 6rem;
+           }
+           .carlist ul li select{
+               width: 6rem;
+               text-align-last: right;
+               border: none;
+               outline: none;
+           }
+           .carlist ul select option{
+               outline: none;
+           }
+           .carlist li input{
+               width: 6rem;
+               text-align: center;
+               border: none;
+               outline: none;
+           }
+           .cardetail{
+              margin-bottom: 1rem;
+           }
+           .cardetail p{
+               margin-top: .5rem;
+           } 
+           .cardetail textarea{
+            width: 18.75rem;
+            height: 4.59rem;
+            border: solid 0.03rem #999999; 
+            font-size: 0.75rem;
+            /* color: #999999; */
+            margin-top: .8rem;
+           }
+           #contect{
+               width: 100%;
+               background-color: #ffffff;
+               margin: .5rem 0;
+               overflow: hidden;
+           }
+           .link,.choseid,.phone{
+             text-align: center;
+             padding: .8rem 0;
+           }
+           .choseid{
+               width: 21.88rem;
+               margin: auto;
+               border-bottom: 1px solid #f1f1f1;
+               border-top: 1px solid #f1f1f1;
+           }
+           .choseid>p{
+             margin-top: .5rem;
+           }
+           .link>p{
+               margin-top: .5rem;
+           }
+           .inname{
+               width: 7rem;
+               outline: none;
+               border:none;
+               text-align: center;
+           }
+           .xuanze,.xuanze1{
+               display: inline-block;
+           }
+           .xuanze p,.xuanze1 p{
+               display: inline-block;
+               width: 4.44rem;
+               height: 2rem;
+               line-height: 2rem;
+               background-color: #ebebeb;
+	           border-radius: 1.03rem 0 0 1.03rem;
+               color: #999999;
+           }
+           .xuanze1{
+               margin-top: .5rem;
+           }
+           .xuanze p:nth-of-type(2),.xuanze1 p:nth-of-type(2){
+            border-radius: 0 1.03rem 1.03rem 0;
+           }
+           .phone{
+               padding: .5rem;
+           }
+           .active{
+               color: #ffffff !important;
+               background-color: #d70c24 !important;
+           }
+           .phone input{
+               width: 12rem;
+               text-align: center;
+               outline: none;
+               border: none;
+           }
+           .fabu{
+               width: 100%;
+               height: 5rem;
+               background-color: #ffffff;
+               margin-top: .8rem;
+               overflow: hidden;
+           }
+           .fabu p input{
+            width: 20.44rem;
+            height: 2.25rem;
+            background-color:  #d70c24;
+            border-radius: 0.31rem;
+            text-align: center;
+            line-height: 2.25rem;
+            margin: auto;
+            margin-top: 1rem;
+            color: #ffffff;
+            display: block;
+           }
+           #distpicker{
+               margin-top: .5rem;
+           }
+           .xiaoqu{
+               margin-top: .5rem;
+           }
+          .marleft{
+              margin-left: -2rem !important;
+          }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+            <form action="" enctype="multipart/form-data"  method="post">
+            <!-- 顶部 -->
+            <div class="top">
+             <img src="img/back.png" alt="">
+             <p>求租车位</p>
+            </div>
+			<!-- 基本信息 -->
+			<div id="message">
+                <p>基本信息</p>
+             <div class="centercontent">
+                <p>区域</p>
+                    <!-- 三级联动 -->
+                    <div id="distpicker">
+                            <select name="province"></select>
+                            <select name="city"></select>
+                            <select name="town"></select>
+                    </div>
+                    <p class="xiaoqu">详细地址</p>
+                    <input type="text" name="" class="areaname" placeholder="例：xx路">    
+                <p class="xiaoqu">小区</p>
+                <input type="text" name="site" class="areaname" placeholder="输入小区名称">
+
+			 </div>
+              <!--三列单-->
+		     <div class="carlist">
+                 <ul>
+                        <li>
+                                <p>车位价格</p>
+                                <select name="" id="">
+                                    <option value="8万以下">8万以下</option>
+                                    <option value="10万以下">10万一下</option>
+                                </select>
+                            </li>
+                 </ul>
+                 <ul>
+                        <li>
+                                <p>车位类型</p>
+                                <select name="" id="">
+                                    <option value="biaozhun">标准车位</option>
+                                    <option value="zimu">字母车位</option>
+                                    <option value="weixin">微型车位</option>
+                                    <option value="jiakuan">加宽车位</option>
+                                    <option value="jiachang">加长车位</option>
+                                </select>
+                         </li>
+                        <li>
+                         <p>租期</p>
+                         <select class="marleft" name="lease" id="">
+                                 <option value="一年">一年</option>
+                                 <option value="两年">两年</option>
+                             </select>
+                          </li>
+                         <li>
+                                <p>地下位置</p>
+                                <select name="" id="">
+                                        <option value="1">负一层</option>
+                                        <option value="2">负二层</option>
+                                        <option value="3">负三层</option>
+                                    </select>
+                         </li>
+                    </ul>
+             </div>
+             <!-- 车位详情 -->
+             <div class="cardetail">
+              <p>具体要求</p>
+              <textarea name="parkdescrip" id="" placeholder="描述一下您的具体要求~"></textarea>
+             </div>
+			</div>
+			<!-- 联系人 -->
+		   <div id="contect">
+				<div class="link">
+                        <p>联系人</p>
+                        <input class="inname" name="owner" type="text" placeholder="请填写姓名">  |&nbsp;&nbsp;&nbsp;
+                        <div class="xuanze">
+                            <p class="active">先生</p>
+                            <p>女士</p>
+                        </div>
+                        <input type="hidden" class="tex1" name="" value="">
+				 </div>
+                <div class="phone">
+                   <p>手机号</p>
+                   <input type="number" name="cellphone" placeholder="请输入">
+                </div>
+           </div>
+           <div class="fabu">
+                <p><input type="button" value='确定发布' onclick="return check(this.form)"></p>
+           </div>
+        </form>  
+        </div>
+        <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	    <!-- <script src="js/distpicker.data.js"></script>
+	    <script src="js/distpicker.js"></script>
+	    <script src="js/main.js"></script> -->
+	</body>
+    <script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        // $("#distpicker").distpicker({
+        //     autoSelect: false
+        //     });
+         $(".xuanze p").click(function (param) {
+             $(".xuanze p").removeClass("active");
+             $(this).addClass("active");  
+             $(".tex1").val($(this).text());
+           }) 
+        //    $(".xuanze1 p").click(function (param) {
+        //      $(".xuanze1 p").removeClass("active");
+        //      $(this).addClass("active");
+        //      $(".tex2").val($(this).text());
+        //     //  alert($(".tex2").val())
+        //    }) 
+         //验证不能为空等 
+          function check(form) {
+               if(form.town.value==''){
+                webToast("请选择地址","middle",2000);
+                    return false;
+                 }
+               if(form.site.value==''){
+                webToast("请输入小区名称","middle",2000);
+                    // form.site.focus();
+                    return false;
+                 }
+                 if(form.owner.value==''){
+                webToast("请输入姓名","middle",2000);
+                    // form.owner.focus();
+                    return false;
+                 }
+                 if(form.cellphone.value==''){
+                webToast("请输入您的手机号","middle",2000);
+                    // form.cellphone.focus();
+                    return false;
+                 }
+                 　var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;      　　         if (!myreg.test(form.cellphone.value)) { 
+                    webToast("手机号输入有误请重试","middle",2000);    
+                    // form.cellphone.focus();
+                    return false;
+                 }
+            webToast("恭喜您发布车位成功！恭喜您发布车位成功！","middle",2000);
+            window.setTimeout(function(){
+				form.submit();
+				},2000);         
+         }               
+
+    </script>
+</html>

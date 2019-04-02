@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>查询结果</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+                color: #333333;
+			}
+            .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   font-size: 1.125rem;
+               color: #333333;
+		   }
+		   .header{
+		   	height: 2.81rem;
+		   	overflow: hidden;
+		   	background-color: #cacaca;
+		   	color: #FFFFFF;
+		   }
+		   .header p{
+		   	float: left;
+		   	line-height: 2.81rem;
+		   }
+		   .header img{
+		   	width: 1.25rem;
+		   	vertical-align: middle;
+		   }
+		   .red{
+		   	width: 23.44rem;
+			height: 4.69rem;
+			background-image: linear-gradient(0deg, 
+				#dc0724 0%, 
+		rgba(220, 7, 36, 0.6) 100%);
+	        border-radius: 0.25rem;
+	        display: flex;
+	        flex-direction: row;
+	        justify-content: space-around;
+	        align-items: center;
+		   }
+		   .red p{
+		   	color: #FFFFFF;
+		   	font-size: 1rem;
+		   	line-height: 1.8rem;
+		   }
+		   .list li{
+		   	overflow: hidden;
+		   }
+		   .list li:nth-child(even ){
+		   	background: #c9c9c9;
+		   }
+		   .content{
+		   	width: 20.56rem;
+		   	margin: auto;
+		   }
+		   .content p{
+		   	line-height: 2rem;
+		   	font-size: 1rem;
+		   	color: #666666;
+		   }
+            .sort{
+            	display: flex;
+            	flex-direction: row;
+		        justify-content: space-evenly;
+		        align-items: center;
+            }
+            .sort p span{
+            	display: inline-block;
+            	width: 1.38rem;
+            	height: 1.38rem;
+            	border-radius: 50%;
+            	background: #dc0724;
+            	color: #FFFFFF;
+            	text-align: center;
+            	line-height: 1.38rem;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+            <!-- 头部 -->
+                <div class="top">
+                        <img src="img/back.png" alt="">
+                        <p>查询结果</p>         
+                </div>
+                <div class="header">
+                        <p style="margin-left:.84rem;">共<span>4</span>条违章记录，扣<span>3</span>分，罚款<span>400</span></p>
+                        <p style="float: right;margin-right: .84rem;">| &nbsp;&nbsp;&nbsp; <img src="img/reload.png" alt="" />&nbsp;刷新</p>         
+                </div>
+                <div class="red">
+                	<div class="flexone">
+                		<p>车牌号：</p>
+                		<p>豫A443654</p>
+                	</div>
+                	<div class="flexone">
+                		<p>车型：</p>
+                		<p>小型汽车</p>
+                	</div>
+                </div>
+
+		   <!--列表-->
+		    <div class="salepark">
+		   	<div class="list">
+		   		<ul> 
+		   			<li>
+					<div class="content">
+						<p>时间：<span>2018-8-22&nbsp;&nbsp;9:33:00</span></p>
+						<p>地点：<span>[郑州]郑州市农业南路与正光北街交叉口文化路与北三环交叉口</span></p>
+						<p>违章：<span>闯红灯</span></p>
+						<div class="sort">
+							<p><span>￥</span>&nbsp;100</p>
+							<p><span>扣</span>&nbsp;3分</p>
+						</div>
+					</div>
+					  </li>
+					 <li>
+                         <div class="content">
+						<p>时间：<span>2018-8-22&nbsp;&nbsp;9:33:00</span></p>
+						<p>地点：<span>[郑州]郑州市农业南路与正光北街交叉口文化路与北三环交叉口</span></p>
+						<p>违章：<span>闯红灯</span></p>
+						<div class="sort">
+							<p><span>￥</span>&nbsp;100</p>
+							<p><span>扣</span>&nbsp;3分</p>
+						</div>
+					</div>   
+                        </li>
+		   		</ul>
+		   	</div>
+		   </div>
+		</div>	
+	</body>
+	
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+ 
+	</script>
+</html>

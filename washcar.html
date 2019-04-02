@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>特惠洗车</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+                color: #333333;
+			}
+            .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   font-size: 1.125rem;
+               color: #333333;
+		   }
+           .top p:nth-of-type(2){
+               float: right;
+               margin-top: -3rem;
+               font-size: .75rem;
+               margin-right: .56rem;
+           }
+           .top a{
+               text-decoration: none;
+               color: #333333;
+           }
+        
+
+
+			.list{
+				width: 100%;
+				background-color: #ffffff;
+			}
+			.list ul{
+				width: 100%;	
+			}
+			.list ul li{
+				border-bottom: .0625rem solid #ebebeb;
+				overflow: hidden;
+			}
+			.list ul li .center{
+				width: 21.6875rem;
+				margin: auto;
+				margin-top: 1.0625rem;
+				overflow: hidden;
+				height: 7.5625rem;	
+			}
+			.center img{
+                float: left;
+				width: 7.625rem;
+			}
+			.center .nearright{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.nearright p:nth-of-type(1){
+				color: #333333;
+				font-size: 1rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                height: 1.3rem;
+                width: 12.1875rem;
+                overflow: hidden;
+			}
+			.nearright p:nth-of-type(2){
+				font-size: .94rem;
+                height: 2.5rem;
+				margin-top: .38rem;
+                color: #666666;
+                overflow: hidden;
+                /* white-space: nowrap; */
+                text-overflow: ellipsis;
+                -webkit-line-clamp:2;
+                word-break:break-all;
+                display:-webkit-box;
+                -webkit-box-orient:vertical;
+			}
+			.nearright p:nth-of-type(3){
+				margin-top: .7rem;
+                text-align: right;
+                color: #7b7b7d;
+                font-size: .75rem;
+			}
+            .nearright p:nth-of-type(3) img{
+				width: 1.31rem;
+                margin-top: -.2rem;
+                margin-left: 6.8rem;
+                vertical-align: middle;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+            <!-- 头部 -->
+                <div class="top">
+                        <img src="img/back.png" alt="">
+                        <p>特惠洗车</p>         
+                </div>
+
+		   <!--列表-->
+		    <div class="salepark">
+		   	<div class="list">
+		   		<ul> 
+		   			<li>
+					<a href="#">  
+						<div class="center">
+		   				<img src="img/zijialei/pic.png"/>
+		   				<div class="nearright">
+		   				<p>万科城乐高课程超值购</p>
+		   				<p>孩子和您的福利都准备好了！一个月的乐高课程只要2块钱~，多重免费福利等您来店体验，车博士为您服务！</p>
+		   				<p class="createbox"><img src="img/zijialei/nozan.png" alt=""><span>赞（<span class="num">292</span>）</span></p>
+						   </div>
+						</div>
+					</a>
+					   </li>
+					   <li>
+                            <a href="#">  
+                                <div class="center">
+                                   <img src="img/zijialei/pic2.png"/>
+                                   <div class="nearright">
+                                   <p>万科城乐高课程超值购</p>
+                                   <p>孩子和您的福利都准备好了！一个月的乐高课程只要2块钱~，多重免费福利等您来店体验，车博士为您服务！</p>
+                                   <p class="createbox"><img src="img/zijialei/nozan.png" alt="赞"><span>赞（<span class="num">292</span> ）</span></p>
+                                   </div>
+                                </div>
+                            </a>
+                               </li>
+		   		</ul>
+		   	</div>
+		   </div>
+		</div>	
+	</body>
+	
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+        $('.createbox').click(function(){
+			var num = $(this).find($(".num")).text(); 
+			if($(this).find('img').attr('src')=='img/zijialei/nozan.png'){
+				$(this).find('img').attr('src','img/zijialei/zan.png');	
+//				$(this).find($(".num")).attr('src','img/zijialei/zan.png');
+				num++;
+				$(this).find($(".num")).text(num);
+			}else{
+				$(this).find('img').attr('src','img/zijialei/nozan.png');
+				num--;
+				$(this).find($(".num")).text(num);
+			}
+		})
+	</script>
+</html>

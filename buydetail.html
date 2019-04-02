@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>出售车位-车位详情</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+		.swiper-container{
+			text-align: center;
+			width: 80%;
+			margin: .59rem auto;
+		}
+			.swiper-container img{
+				width: 100%;
+			}
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+			}
+	       .top{
+			height: 2.75rem;
+			overflow: hidden;
+		   }
+		   .top img{
+			   position: absolute;
+			   width: 0.63rem;
+			   top: .84rem;
+			   left: .88rem;
+		   }
+		   .top p{
+			   height: 100%;
+			   text-align: center;
+			   line-height: 2.75rem;
+			   color: #333333;
+			   font-size: 1.125rem;
+		   }
+		   .content{
+			/* height: 13.56rem; */
+	        background-color: #ffffff;
+			width: 100%;
+		   }
+		   .content .centone{
+			   width: 21.4rem;
+			   margin: auto;
+			   overflow: hidden;
+		   }
+		   .centone>p{
+			width: 10.8rem;
+			color: #333333;
+			margin-top: 0.5rem;
+		   }
+		   .centone>p img{
+			  width: 3.28rem; 
+			  margin-left: 0.84rem;
+		   }
+		   .centercen{
+			   width: 20rem;
+			   margin: auto;
+			   font-size: .69rem;
+			   overflow: hidden;
+		   }
+		   .centercen p{
+			   float: left;
+		   }
+		   .first{
+			   color: #d70c24;
+			   line-height: 1.3rem;
+		   }
+		   .money{
+			   margin-left: 2.65rem;
+			   color: #d70c24;
+		   }
+		   .money span{
+			   font-size: 0.94rem;
+		   }
+		   .centercen .time{
+			   float: right;
+			   color: #999999
+		   }
+		   .message{
+			   width: 100%;
+			   margin-top: 0.75rem;
+		   }
+		   .message p{
+			   float: none;
+			   color: #999999;
+			   /*height: 1.5rem;*/
+			   line-height: 1.5rem;
+		   }
+		   .message p span{
+			   display: inline-block;
+			   margin-left: 0.688rem;
+			   color: #333333;
+			   vertical-align: top;
+			   width: 14rem;
+		   }
+		   .message .area{
+			   margin-top: -0.45rem;
+		   }
+		   .contect{
+             width: 18rem;
+             margin-left: 2rem;
+			 margin-top: .3rem;
+		   }
+           .contect p{
+             color: #d70c24;
+			 font-size: .94rem;
+			 vertical-align: middle;
+			 line-height: 2rem;
+		   }
+		   .contect p img{
+			   width: 1.31rem;
+			   vertical-align: middle;
+		   }
+		   .contect p span{
+			   display: inline-block;
+			   margin-left: 1.6rem;
+		   }
+           #parkview{
+			   background-color: #ffffff;
+			   margin-top: 0.63rem;
+			   overflow: hidden;
+		   }
+           #parkdiscrib{
+			   background: #ffffff;
+			   margin-top: .63rem;
+			   overflow: hidden;
+		   }
+		   #parkdiscrib>p{
+			   width: 19rem;
+			   margin-left: 2rem;
+			   line-height: 1.4rem;
+			   font-size: .88rem;
+			   margin-bottom: 1rem;
+		   }
+           #newpark{
+			   overflow: hidden;
+			   background: #ffffff;
+			   margin-top: .63rem;
+		   }
+
+		   /* list */
+			.nearhead{
+               width: 100%;
+			   height: 1.5rem;
+			   margin-top: .5rem;
+			   /* background-color: #f1f1f1; */
+			   overflow: hidden;
+			}
+			.zhu{
+				float: left;
+				margin-left: .5rem;
+				width: .1875rem;
+				height: .75rem;
+				border-radius: 50%;
+				background-color: #d80d25;
+				margin-top: .375rem;
+			}
+			.nearhead p{
+                float: left;
+				margin-left: .125rem;
+				font-size:  .875rem;
+				margin-top: .125rem;
+				color: #333333;
+			}
+			.nearhead span{
+              float: right;
+			  margin-top: .375rem;
+			  margin-right: .5rem;
+			  font-size: .6875rem;
+			  color: #959595;
+			}
+			.list{
+				width: 100%;
+				background-color: #ffffff;
+			}
+			.list ul{
+				width: 100%;	
+			}
+			.list ul li{
+				border-bottom: .0625rem solid #ebebeb;
+				overflow: hidden;
+			}
+			.list ul li .center{
+				width: 21.6875rem;
+				margin: auto;
+				margin-top: 1.0625rem;
+				overflow: hidden;
+				height: 7.5625rem;	
+			}
+			.center img{
+                float: left;
+				width: 7.625rem;
+			}
+			.center .nearright{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.nearright p:nth-of-type(1){
+				color: #333333;
+				font-size: .9375rem;
+				line-height: 1.125rem;
+			}
+			.nearright p:nth-of-type(2){
+				font-size: .75rem;
+				color: #7b7b7b;
+				margin-top: .25rem;
+			}
+			.nearright p:nth-of-type(3){
+				font-size: .75rem;
+                width: 1.75rem;
+				height: .75rem;
+				color: #dfa787;
+				border: .0625rem solid #dfa787;
+				text-align: center;
+				line-height: .8125rem;   
+				padding: .125rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4){
+				color: #d80d25;
+				font-size: .6875rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4) span{
+				font-size: .9375rem;
+			}
+			.first,.money,.time{
+				margin-top: .5rem;
+			}
+			.centone p{
+				font-size: .94rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+            <!-- 顶部 -->
+            <div class="top">
+             <img src="img/back.png" alt="">
+             <p>出售车位-车位详情</p>
+            </div>
+            <!-- content -->
+            <div class="content">
+             <div class="centone">
+               <p>正商幸福港湾 <img src="img/gfrz.png" alt=""></p>
+               <div class="centercen">
+                 <p class="first">价&nbsp;&nbsp;格</p>
+                 <p class="money">￥<span>15.4万</span></p>
+				 <p class="time">发布时间：<span>2018-08-08</span></p>
+				 <br>
+				 <div class="message">
+				  <p style="margin-top: 1.2rem;">车位状态&nbsp;&nbsp;&nbsp;<span>在售</span></p>
+				  <p>车位类型&nbsp;&nbsp;&nbsp;<span>标准车位</span></p>
+				  <p class="area">车位面积&nbsp;&nbsp;&nbsp;<span style="vertical-align: baseline;">18m<sup>2</sup></span></p>
+				  <p>在售地址&nbsp;&nbsp;&nbsp;<span>和昌悦澜湾北苑售楼部一层</span></p>
+				  <p>物业公司&nbsp;&nbsp;&nbsp;<span>个人</span></p>
+				  <p>所属区域&nbsp;&nbsp;&nbsp;<span>B1</span></p>
+				 </div>
+			   </div>
+			   <div class="contect">
+				  <p><img src="img/head.png" alt=""><span>黄女士</span></p>
+				  <p><img src="img/phone.png" alt=""><span>18954669988</span></p>
+			   </div>
+             </div> 
+			</div>
+			<!-- 车位实景 -->
+			<div id="parkview">
+             <div class="nearhead">
+					<div class="zhu"></div>
+					<p>车位实景：</p>  
+			 </div>
+              <!--轮播图-->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				  <div class="swiper-slide"><a href="#"><img src="img/bigmap.png"/></a></div>  
+				</div>
+			  </div>
+			</div>
+			<!-- 车位描述 -->
+		   <div id="parkdiscrib">
+				<div class="nearhead">
+						<div class="zhu"></div>
+						<p>车位描述：</p>  
+				 </div>
+				 <p>标准车位，一年起租，长期租可优惠。</p>
+		   </div>
+		   <!-- 最新发布 -->
+		   <div id="newpark">
+				<div class="nearhead">
+						<div class="zhu"></div>
+						<p>最新发布：</p>  
+				 </div>
+				 <div class="list">
+						<ul>
+							<li>
+							 <a href="#">
+								<div class="center">	  
+								<img src="img/small.png"/>
+								<div class="nearright">
+								<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+								<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+								<p>在租</p>
+								<p>￥<span>500元</span></p>
+								</div>
+							 </div>
+							</a>
+							</li>
+							<li>
+							 <a href="#">
+							 <div class="center">
+							 <img src="img/moren.png"/>
+							 <div class="nearright">
+							 <p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+							 <p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+							 <p>在租</p>
+							 <p>￥<span>500元</span></p>
+							 </div>
+						  </div>
+						  </a>
+						 </li>
+						</ul>
+					</div>
+		   </div>
+	
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		autoplay: true,//可选选项，自动滑动
+		// loop:true,
+	})
+	</script>
+</html>

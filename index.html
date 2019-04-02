@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>发布车位</title>
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<style type="text/css">
+			.swiper-container img{
+				width: 100%;
+			}
+			#wrap{
+				background-color: #f1f1f1;
+				font-family: SourceHanSansCN-Regular;
+			}
+			.fenlei{
+				background-color: #ffffff;
+				height: 5.5625rem;
+				overflow: hidden;
+			}
+			.fenlei ul{
+				display: flex;
+				flex-direction: row;
+			    align-items: center;
+			    justify-content:space-around;
+			    margin-top: .1rem;
+			}
+			.fenlei ul li{
+				margin-top: 1.125rem;
+				text-align: center;
+			}
+			.fenlei li img{
+				width: 2.4rem;
+			}
+			.fenlei li p{
+				font-size: .84rem;
+				color: #7b7b7d;
+			}
+			.nearpark{
+                width: 100%;
+			}
+			.nearhead{
+               width: 100%;
+			   height: 1.5rem;
+			   background-color: #f1f1f1;
+			   overflow: hidden;
+			}
+			.zhu{
+				float: left;
+				margin-left: .5rem;
+				width: .1875rem;
+				height: .75rem;
+				border-radius: 50%;
+				background-color: #d80d25;
+				margin-top: .375rem;
+			}
+			.nearhead p{
+                float: left;
+				margin-left: .125rem;
+				font-size:  .875rem;
+				margin-top: .125rem;
+				color: #333333;
+			}
+			.nearhead span{
+              float: right;
+			  margin-top: .375rem;
+			  margin-right: .5rem;
+			  font-size: .6875rem;
+			  color: #959595;
+			}
+			.list{
+				width: 100%;
+				background-color: #ffffff;
+			}
+			.list ul{
+				width: 100%;	
+			}
+			.list ul li{
+				border-bottom: .0625rem solid #ebebeb;
+				overflow: hidden;
+			}
+			.list ul li .center{
+				width: 21.6875rem;
+				margin: auto;
+				margin-top: 1.0625rem;
+				overflow: hidden;
+				height: 7.5625rem;	
+			}
+			.center img{
+                float: left;
+				width: 7.625rem;
+			}
+			.center .nearright{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.nearright p:nth-of-type(1){
+				color: #333333;
+				font-size: .9375rem;
+				line-height: 1.125rem;
+			}
+			.nearright p:nth-of-type(2){
+				font-size: .75rem;
+				color: #7b7b7b;
+				margin-top: .25rem;
+			}
+			.nearright p:nth-of-type(3){
+				font-size: .75rem;
+                width: 1.75rem;
+				height: .75rem;
+				color: #dfa787;
+				border: .0625rem solid #dfa787;
+				text-align: center;
+				line-height: .8125rem;   
+				padding: .125rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4){
+				color: #d80d25;
+				font-size: .6875rem;
+				margin-top: .125rem;
+			}
+			.nearright p:nth-of-type(4) span{
+				font-size: .9375rem;
+			}
+			
+			
+			.listbuy{
+				width: 100%;
+				background-color: #ffffff;
+			}
+			.listbuy ul{
+				width: 100%;	
+			}
+			.listbuy ul li{
+				border-bottom: .0625rem solid #ebebeb;
+				overflow: hidden;
+			}
+			.listbuy ul li .center2{
+				width: 21.6875rem;
+				margin: auto;
+				margin-top: 1.0625rem;
+				overflow: hidden;
+				height: 7.5625rem;	
+			}
+			.listbuy .center2 img{
+                float: left;
+				width: 7.625rem;
+			}
+			.listbuy .center2 .nearright2{
+				float: left;
+				margin-left: 1.65625rem;
+				width: 12.1875rem;
+			}
+			.listbuy .nearright2 p:nth-of-type(1){
+				color: #333333;
+				font-size: .9375rem;
+				line-height: 1.125rem;
+			}
+			.listbuy .nearright2 p:nth-of-type(2){
+				font-size: .88rem;
+				color: #333333;
+				margin-top: 1rem;
+			}
+			.listbuy .nearright2 p:nth-of-type(2) span{
+				color: #dc0724;	
+			}
+			.listbuy .nearright2 p:nth-of-type(3){
+				font-size: .75rem;        
+				color: #7b7b7d;
+				margin-top: 1rem;
+			}
+			.listbuy .nearright2 p:nth-of-type(3) span{       
+				color: #e0a688;
+				border: .0625rem solid #e0a688;
+				text-align: center;
+				padding: 0 .5rem;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+		<!--轮播图-->
+			<div class="swiper-container">
+			  <div class="swiper-wrapper">
+			    <div class="swiper-slide"><a href="#"><img src="img/ceshi.jpg"/></a></div>
+			    <div class="swiper-slide"><a href="#"><img src="img/ceshi.jpg"/></a></div>
+			    <div class="swiper-slide"><a href="#"><img src="img/ceshi.jpg"/></a></div>
+			  </div>
+			  <div class="swiper-pagination"></div>
+			</div>
+		<!--内容区-->	
+			<div class="fenlei">
+				<ul>
+					<li>
+						<img src="img/chushou.png"/>
+						<p>出售车位</p>
+					</li>
+					<li>
+						<img src="img/chuzu.png"/>
+						<p>出租车位</p>
+					</li>
+					<li>
+						<img src="img/qiugou.png"/>
+						<p>求购车位</p>
+					</li>
+					<li>
+						<img src="img/qiuzu.png"/>
+						<p>求租车位</p>
+					</li>
+				</ul>
+			</div>
+		   <!--在售车位-->
+		   <div class="salepark">
+			<div class="nearhead">
+				<div class="zhu"></div>
+				<p>在售车位：</p>  
+			 <a href="#"><span>查看更多></span></a>
+			</div>
+			<div class="list">
+				<ul> 
+					<li>
+				 <a href="#">  
+						 <div class="center">
+						<img src="img/small.png"/>
+						<div class="nearright">
+						<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+						<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+						<p>在售</p>
+						<p>￥<span>10万元</span></p>
+						</div>
+					 </div>
+				 </a>
+					</li>
+					<li>
+					 <a href="#">
+					 <div class="center">
+					<img src="img/small.png"/>
+					<div class="nearright">
+					<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+					<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+					<p>在售</p>
+					<p>￥<span>10万元</span></p>
+					</div>
+				 </div>
+				 </a>
+				</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--在租车位-->	
+		   <div class="nearpark">
+		   	<div class="nearhead">
+		   		<div class="zhu"></div>
+		   		<p>在租车位：</p>  
+				   <a href="#"><span>查看更多></span></a>
+		   	</div>
+		   	<div class="list">
+		   		<ul>
+		   			<li>
+						<a href="#">
+						   <div class="center">	  
+		   				<img src="img/small.png"/>
+		   				<div class="nearright">
+		   				<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+		   				<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+		   				<p>在租</p>
+		   				<p>￥<span>500元</span></p>
+						   </div>
+						</div>
+					   </a>
+					   </li>
+					   <li>
+						<a href="#">
+						<div class="center">
+						<img src="img/small.png"/>
+						<div class="nearright">
+						<p>和昌悦澜湾北苑地下车位（包括诚意出租）</p>
+						<p><span>金水路-文化路</span>&nbsp;<span>2.4*3m</span></p>
+						<p>在租</p>
+						<p>￥<span>500元</span></p>
+						</div>
+					 </div>
+					 </a>
+					</li>
+		   		</ul>
+		   	</div>
+		   </div>
+		 		<!--求购车位-->	
+		   <div class="nearpark">
+		   	<div class="nearhead">
+		   		<div class="zhu"></div>
+		   		<p>求购车位：</p>  
+				   <a href="#"><span>查看更多></span></a>
+		   	</div>
+		   	<div class="listbuy">
+		   		<ul>
+		   			<li>
+				 <a href="#">  
+						 <div class="center2">
+						<img src="img/morenpic.png"/>
+						<div class="nearright2">
+						<p>求购和昌悦澜湾北苑车位</p>
+						<p>价格范围：<span>￥10-20万</span></p>
+						<p><span>金水区-文化路</span>&nbsp;&nbsp;&nbsp;&nbsp;子母车位</p>
+						</div>
+					 </div>
+				 </a>
+					</li>
+					<li>
+				 <a href="#">  
+						 <div class="center2">
+						<img src="img/morenpic.png"/>
+						<div class="nearright2">
+						<p>求购和昌悦澜湾北苑车位</p>
+						<p>价格范围：<span>￥10-20万</span></p>
+						<p><span>金水区-文化路</span>&nbsp;&nbsp;&nbsp;&nbsp;子母车位</p>
+						</div>
+					 </div>
+				 </a>
+					</li>
+		   		</ul>
+		   	</div>
+		   </div>
+		   
+		   		<!--求租车位-->	
+		   <div class="nearpark">
+		   	<div class="nearhead">
+		   		<div class="zhu"></div>
+		   		<p>求租车位：</p>  
+				   <a href="#"><span>查看更多></span></a>
+		   	</div>
+		   	<div class="listbuy">
+		   		<ul>
+		   			<li>
+				 <a href="#">  
+						 <div class="center2">
+						<img src="img/morenpic.png"/>
+						<div class="nearright2">
+						<p>求购和昌悦澜湾北苑车位</p>
+						<p>价格范围：<span>￥400-500元/月</span></p>
+						<p><span>金水区-文化路</span>&nbsp;&nbsp;&nbsp;&nbsp;子母车位</p>
+						</div>
+					 </div>
+				 </a>
+					</li>
+					   <li>
+				 <a href="#">  
+						 <div class="center2">
+						<img src="img/morenpic.png"/>
+						<div class="nearright2">
+						<p>求购和昌悦澜湾北苑车位</p>
+						<p>价格范围：<span>￥400-500元/月</span></p>
+						<p><span>金水区-文化路</span>&nbsp;&nbsp;&nbsp;&nbsp;子母车位</p>
+						</div>
+					 </div>
+				 </a>
+					</li>
+		   		</ul>
+		   	</div>
+		   </div>
+
+		</div>	
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+	<script src="js/rem_750.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		autoplay: true,//可选选项，自动滑动
+		loop:true,
+		pagination: {
+			    el: '.swiper-pagination',
+			  },
+	})
+	</script>
+</html>
